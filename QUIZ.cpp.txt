@@ -1,0 +1,88 @@
+#include "quiz.h"
+#include<iostream>
+using namespace std;
+quiz::quiz(){
+
+};
+void quiz::getAttendance()
+{
+	char alpha;
+	cout<<"PLZ MARK THE ATTENDANCE \n\n"<<endl;
+	cout<<"press Y if yes and N if attendance is not marked"<<endl;
+	cin>>alpha;
+	switch(alpha)
+	{
+	case('n'||'N'):
+		{
+			cout<<"\n\n\tYOU HAVE TO MARK ATTENDANCE FIRST\t\n\n";
+			break;
+		}
+	default:
+		{
+			cout<<"CONTINUE\n\n";
+			releaseLecture();
+		}
+	}
+}
+void quiz::releaseLecture()
+{
+
+	cout<<"\n\nSYSTEM IS FETCHING LECTURE FROM THE SYSTEM\n\n";
+
+	cout<<"\n\nLECTURES ARE NOW UPLOADED ON YOUR LMS\n\n";
+
+}
+void quiz::releaseQuiz()
+{
+	cout<<"\n\nSYSTEM IS FETCHING QUIZ FROM THE SYSTEM\n\n";
+	cout<<"\n\nQUIZ ARE NOW UPLOADED ON YOUR LMS\n\n";
+}
+void quiz::notifyStudents()
+{
+	cout<<"DEAR STUDENT YOUR LECTURE QUIZ"<<"/n"<<" FOR SUBJ XYZ HAS BEEN UPLOADED ON LMS AND YOU ARE REQUESTED TO PLEASE COMPLETE IT BEFORE THE NEXT CLASS"<<endl;
+}
+
+
+int  quiz::calculateMarks()
+{
+	int qnumbers=0; //no of questions
+	int iscore=0;; //to get marks of the student
+	int score=0; //to get percentage score in quiz
+	cout<<"PLZ ENTER THE MARKS OBTAINED BY THE STUDENT"<<endl;  //each MCQ carries one mark
+	cin>>iscore;
+	cout<<"PLZ ENTER THE NO OF MCQs INCLUDED"<<endl;
+	cin>>qnumbers;
+	score=((iscore*100)/qnumbers);
+	if (score<=60)
+	{
+		return 0;
+	}
+
+	int sum=0; //sum of all marks to get average
+	int marks[4];
+	int average=0;
+	int total=0;
+
+
+	cout<<"PLZ ENTER THE MARKS OF THE STUDENTS"<<endl;
+	for (int i=0;i<4;i++)
+	{
+		cin>>marks[i];
+	}
+	for (int j=0;j<4;j++)
+	{
+		sum+=marks[j];
+	}
+
+
+	cout<<"THE SUM OF ALL THe MARKS OBTAINED BY STUDENTS IN CLASS IS:   "<<sum<<endl;
+	average=((sum/(qnumbers*4))*100);
+	if(average<60)
+	{
+		cout<<"THE PERIVIOUS TOPIC NEEDS TO BE TAUGHT AGAIN"<<endl;
+	}
+	else
+		cout<<"THE CLASS AVERAGE IS  "<<average<<endl<<"YOU CAN MARK THE NEXT ATTENDANCE"<<endl;
+
+
+}

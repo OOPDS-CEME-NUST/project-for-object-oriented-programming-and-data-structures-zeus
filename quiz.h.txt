@@ -1,0 +1,13 @@
+#ifndef QUIZ_H
+#define QUIZ_H
+
+class quiz{
+public:
+	quiz();
+	void getAttendance();
+	void releaseLecture();
+	void releaseQuiz();
+	void notifyStudents();
+	int calculateMarks();
+};
+#endif

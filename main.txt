@@ -1,0 +1,13 @@
+#include "quiz.h"
+#include<iostream>
+using namespace std;
+int main()
+{
+	int average;
+	quiz a;
+	a.getAttendance();
+	a.releaseQuiz();
+	a.notifyStudents();
+	a.calculateMarks();
+	return 0;
+}
